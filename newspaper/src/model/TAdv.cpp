@@ -7,6 +7,6 @@ void TAdv::setText(std::string text) { _text = text; }
 
 string TAdv::getText() {
     string text;
-    text = "\tADVERTISING\ndate - " + _date + "\n" + _text;
+    text = "\tADVERTISING\n*****\ndate:  " + _date + "\n text:  " + _text + "\n*****\n";
     return (text);
 }

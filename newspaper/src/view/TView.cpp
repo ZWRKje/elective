@@ -23,6 +23,7 @@ void TView::showAddJokeMenu() {
     getline(cin, _artist);
     cout << "rating:";
     cin >> _rating;
+    cin.ignore();
     cout << "text: ";
     getline(cin, _text);
 }

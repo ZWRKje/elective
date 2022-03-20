@@ -9,7 +9,7 @@ void TJokes::setRating(int rating) { _rating = rating; }
 
 string TJokes::getText() {
     string jokeContent;
-    jokeContent = "\tJoke \n artist - " + _artist + "\nrating: " + to_string(_rating) +
-                  "\ntext: " + text;
+    jokeContent = "\tJoke \n*****\nartist:  " + _artist + "\nrating: " + to_string(_rating) +
+                  "\ntext: " + text + "\n*****\n";
     return (jokeContent);
 }
