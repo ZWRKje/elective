@@ -12,6 +12,6 @@ class TGrandMa {
    public:
     TChair* giveChair();
     void sunSet();
-    TGrandMa(ILightable* lamp, TChair* stool, TElectrician worker);
+    TGrandMa(ILightable* lamp, TChair* stool, TElectrician& worker);
     ~TGrandMa();
 };

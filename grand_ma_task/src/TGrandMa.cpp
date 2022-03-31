@@ -1,6 +1,6 @@
 #pragma once
 
-#include "TGrandMa.hpp"
+#include "../headers/TGrandMa.hpp"
 
 #include <iostream>
 
@@ -23,7 +23,7 @@ void TGrandMa::sunSet() {
     }
 };
 
-TGrandMa::TGrandMa(ILightable* lamp, TChair* stool, TElectrician worker) {
+TGrandMa::TGrandMa(ILightable* lamp, TChair* stool, TElectrician& worker) {
     _lamp = lamp;
     _stool = stool;
     _worker = worker;

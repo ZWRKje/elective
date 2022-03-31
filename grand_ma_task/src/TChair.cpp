@@ -1,4 +1,4 @@
-#include "TChair.hpp"
+#include "../headers/TChair.hpp"
 
 int TChair::getAltitude() { return _altitude; }
 

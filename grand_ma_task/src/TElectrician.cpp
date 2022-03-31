@@ -1,6 +1,6 @@
 #pragma once
 
-#include "TElectrician.hpp"
+#include "../headers/TElectrician.hpp"
 int TElectrician::getHeight() { return _height; }
 
 bool TElectrician::work(ILightable* lamp) {
