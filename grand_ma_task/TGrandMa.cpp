@@ -10,11 +10,10 @@ void TGrandMa::sunSet() {
     if (!_lamp->turnOn()) {
         std::cout << "Лампа сломалась \n";
         std::cout << "Электрик приступает к работе \n";
-        if (!_worker.work(dynamic_cast<IRepairable*>(_lamp))) {
+        if (!_worker.work(_lamp)) {
             std::cout << "Тут без стула не обойтись \n";
 
-            if (!_worker.workChair(dynamic_cast<IRepairable*>(_lamp),
-                                   this->giveChair())) {
+            if (!_worker.workChair(_lamp, this->giveChair())) {
                 std::cout << "Лампа не подлежит ремонту \n";
                 return;
             }

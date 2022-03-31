@@ -12,9 +12,10 @@ class TElectrician {
 
    public:
     int getHeight();
-    bool work(IRepairable* lamp);
-    bool workChair(IRepairable* lamp, IChair* stool);
+    bool work(ILightable* lamp);
+    bool workChair(ILightable* lamp, IChair* stool);
     TElectrician(){};
-    TElectrician(int height);
+    TElectrician(const int height,
+                 const std::map<ILightable*, IRepairable*>& base);
     ~TElectrician();
 };

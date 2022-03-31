@@ -3,24 +3,35 @@
 #include "TElectrician.hpp"
 int TElectrician::getHeight() { return _height; }
 
-bool TElectrician::work(IRepairable* lamp) {
-    if (this->getHeight() >= lamp->getHeight()) {
-        lamp->repair();
+bool TElectrician::work(ILightable* lamp) {
+    auto l = _base[lamp];
+    if (!l) {
+        return false;
+    }
+    if (this->getHeight() >= l->getHeight()) {
+        l->repair();
         return true;
     } else {
         return false;
     }
 }
 
-bool TElectrician::workChair(IRepairable* lamp, IChair* stool) {
-    if (this->getHeight() + stool->getAltitude() >= lamp->getHeight()) {
-        lamp->repair();
+bool TElectrician::workChair(ILightable* lamp, IChair* stool) {
+    auto l = _base[lamp];
+    if (!l) return false;
+
+    if (this->getHeight() + stool->getAltitude() >= l->getHeight()) {
+        l->repair();
         return true;
     } else {
         return false;
     }
 }
 
-TElectrician::TElectrician(int height) { _height = height; }
+TElectrician::TElectrician(const int height,
+                           const std::map<ILightable*, IRepairable*>& base) {
+    _base = base;
+    _height = height;
+}
 
 TElectrician::~TElectrician() {}
